@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NewKingdom Soccer</title>
   
-  <!-- AOS & Glider.js CSS -->
+  <!-- AOS and Glider.js CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" />
 
@@ -57,10 +57,11 @@
       box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
 
-    /* Banner with Parallax Effect */
+    /* Banner Section with Parallax Background */
     .banner {
       position: relative;
-      background-color: #ccc; /* Gray background */
+      /* Replace the URL below with your high-quality Addi background image */
+      background: url('https://via.placeholder.com/1920x1080.png?text=Addi+Background') center/cover no-repeat;
       padding: 80px 20px;
       text-align: center;
       overflow: hidden;
@@ -73,15 +74,18 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: inherit;
-      background-attachment: fixed;
+      background: inherit;
+      background-attachment: fixed;  /* Creates the parallax effect */
       background-size: cover;
       z-index: -1;
-      transform: scale(1.1);
+      transform: scale(1.05);
+      filter: brightness(0.85); /* Dark overlay for text legibility */
     }
     .banner h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin: 0;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
 
     /* Product Carousel */
@@ -146,7 +150,7 @@
     <img src="https://via.placeholder.com/400x400.png?text=Soccer+Hero+Image" alt="Soccer Hero">
   </div>
 
-  <!-- Banner with Parallax Effect -->
+  <!-- Banner Section with Updated Background -->
   <div class="banner" data-aos="fade-up">
     <h2>Experience the Game. Embrace Your Style.</h2>
   </div>
@@ -172,7 +176,7 @@
     </div>
   </div>
 
-  <!-- Contact Section -->
+  <!-- Contact Section (Animation Fixed) -->
   <div class="contact-section" data-aos="fade-up">
     <h2>Contact Us</h2>
     <p>Have questions? Email us at <a href="mailto:info@newkingdomsoccer.com">info@newkingdomsoccer.com</a>.</p>
@@ -182,7 +186,7 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
-      once: true  // The animation happens once; elements stay visible.
+      once: true  // Ensures elements animate once and remain visible
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
