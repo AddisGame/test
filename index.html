@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Addis Game | Soccer Clothing</title>
+  
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+  
+  <!-- Glider.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" />
+  
+  <!-- Custom CSS -->
+  <style>
+    /* Reset & basic styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+    
+    /* Navigation Bar */
+    .navbar {
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 10px 0;
+    }
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #000; }
+    .nav-links { list-style: none; display: flex; }
+    .nav-links li { margin-left: 20px; }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: #0071e3; }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: url('https://via.placeholder.com/1200x600') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60vh;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content { position: relative; z-index: 2; padding: 0 20px; }
+    .hero h1 { font-size: 2rem; margin-bottom: 10px; }
+    .hero p { font-size: 1rem; }
+    
+    /* Product Carousel Section */
+    .products-section { padding: 40px 0; }
+    .products-section h2 { text-align: center; margin-bottom: 20px; font-size: 1.75rem; }
+    .glider-contain { position: relative; width: 100%; margin: 0 auto; }
+    .glider { margin: 0 auto; }
+    .product { padding: 10px; text-align: center; }
+    .product img { width: 100%; height: auto; border-radius: 8px; }
+    .product h3 { margin-top: 10px; font-size: 1.1rem; }
+    
+    /* Contact Section */
+    .contact-section {
+      padding: 40px 20px;
+      background: #f9f9f9;
+      text-align: center;
+    }
+    .contact-section h2 { margin-bottom: 10px; font-size: 1.75rem; }
+    .contact-section a { color: #0071e3; text-decoration: none; }
+    
+    /* Responsive typography */
+    @media (min-width: 768px) {
+      .hero h1 { font-size: 3rem; }
+      .hero p { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Addis Game</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Hero Section -->
+  <section id="home" class="hero" data-aos="fade-up">
+    <div class="hero-content">
+      <h1>Experience the Game. Embrace Your Style.</h1>
+      <p>Elevate your soccer style with Addis Game clothing.</p>
+    </div>
+  </section>
+  
+  <!-- Product Carousel Section -->
+  <section id="products" class="products-section">
+    <h2 data-aos="fade-right">Our Products</h2>
+    <div class="glider-contain">
+      <div class="glider">
+        <!-- Product 1 -->
+        <div class="product" data-aos="zoom-in">
+          <img src="https://via.placeholder.com/300x200" alt="Product 1" />
+          <h3>Jersey Classic</h3>
+        </div>
+        <!-- Product 2 -->
+        <div class="product" data-aos="zoom-in" data-aos-delay="100">
+          <img src="https://via.placeholder.com/300x200" alt="Product 2" />
+          <h3>Modern Kit</h3>
+        </div>
+        <!-- Product 3 -->
+        <div class="product" data-aos="zoom-in" data-aos-delay="200">
+          <img src="https://via.placeholder.com/300x200" alt="Product 3" />
+          <h3>Soccer Shorts</h3>
+        </div>
+        <!-- Product 4 -->
+        <div class="product" data-aos="zoom-in" data-aos-delay="300">
+          <img src="https://via.placeholder.com/300x200" alt="Product 4" />
+          <h3>Training Top</h3>
+        </div>
+      </div>
+      <!-- Carousel Arrows -->
+      <button role="button" aria-label="Previous" class="glider-prev">«</button>
+      <button role="button" aria-label="Next" class="glider-next">»</button>
+      <div role="tablist" class="dots"></div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2 data-aos="fade-left">Contact Us</h2>
+    <p data-aos="fade-up">Have questions? Email us at <a href="mailto:info@addisgame.com">info@addisgame.com</a></p>
+  </section>
+  
+  <!-- AOS JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <!-- Glider.js JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+  <!-- Custom JS -->
+  <script>
+    // Initialize AOS for scroll animations
+    AOS.init({ duration: 1000 });
+    
+    // Initialize Glider.js for the product carousel
+    window.addEventListener('load', function () {
+      new Glider(document.querySelector('.glider'), {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        draggable: true,
+        dots: '.dots',
+        arrows: {
+          prev: '.glider-prev',
+          next: '.glider-next'
+        },
+        responsive: [
+          { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+          { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 1 } }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
+Add initial index.html
