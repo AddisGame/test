@@ -163,9 +163,10 @@
   <!-- Glider.js JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
   <!-- Custom JS -->
-  <script>
-    // Initialize AOS for scroll animations
-    AOS.init({ duration: 1000 });
+ <script>
+  AOS.init({
+    once: true // This will ensure the animation only happens one time.
+  });
     
     // Initialize Glider.js for the product carousel
     window.addEventListener('load', function () {
