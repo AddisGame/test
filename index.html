@@ -69,6 +69,7 @@
     .glider-contain {
       margin: 40px 0;
       padding: 0 20px;
+      position: relative;  /* Needed for arrow positioning */
     }
     .glider {
       margin: auto;
@@ -93,6 +94,28 @@
       color: #666;
     }
 
+    /* Arrow Buttons */
+    .glider-prev, .glider-next {
+      display: none; /* Hidden by default, will show on desktop via media query */
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2;
+      font-size: 1.5rem;
+    }
+    .glider-prev {
+      left: 10px;
+    }
+    .glider-next {
+      right: 10px;
+    }
+    
     /* Contact Section */
     .contact-section {
       padding: 60px 20px;
@@ -139,6 +162,10 @@
       .contact-section h2 {
         font-size: 2.5rem;
       }
+      /* Display arrow buttons on desktop */
+      .glider-prev, .glider-next {
+        display: block;
+      }
     }
   </style>
 </head>
@@ -154,8 +181,9 @@
     <h2>Experience the Game. Embrace Your Style.</h2>
   </div>
 
-  <!-- Product Carousel -->
+  <!-- Product Carousel with Arrow Buttons -->
   <div class="glider-contain">
+    <button class="glider-prev">«</button>
     <div class="glider">
       <div class="product-card" data-aos="fade-up">
         <img src="https://via.placeholder.com/300x300.png?text=Elite+Jersey" alt="Elite Match Jersey">
@@ -173,6 +201,7 @@
         <p>Train hard. Recover faster. Gear that moves with you.</p>
       </div>
     </div>
+    <button class="glider-next">»</button>
   </div>
 
   <!-- Contact Section -->
@@ -193,7 +222,11 @@
     new Glider(document.querySelector('.glider'), {
       slidesToShow: 1.2,
       draggable: true,
-      scrollLock: true
+      scrollLock: true,
+      arrows: {
+        prev: document.querySelector('.glider-prev'),
+        next: document.querySelector('.glider-next')
+      }
     });
   </script>
 </body>
