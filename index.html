@@ -33,12 +33,12 @@
       font-size: 0.9rem;
       color: #555;
     }
-
-    /* Banner Section with Parallax Background */
+    
+    /* Banner Section with Background Image and Parallax Effect */
     .banner {
       position: relative;
       /* Replace the URL below with your high-quality Addi background image */
-      background: url('https://via.placeholder.com/1920x1080.png?text=Addi+Background') center/cover no-repeat;
+      background: url('https://via.placeholder.com/1920x1080?text=Addi+Background') center/cover no-repeat;
       padding: 80px 20px;
       text-align: center;
       overflow: hidden;
@@ -52,11 +52,11 @@
       right: 0;
       bottom: 0;
       background: inherit;
-      background-attachment: fixed;  /* Creates the parallax effect */
+      background-attachment: fixed;  /* Enables the parallax effect */
       background-size: cover;
       z-index: -1;
       transform: scale(1.05);
-      filter: brightness(0.85); /* Dark overlay for text legibility */
+      filter: brightness(0.85); /* Dark overlay for better text contrast */
     }
     .banner h2 {
       font-size: 2.5rem;
@@ -64,12 +64,12 @@
       color: #fff;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }
-
+    
     /* Product Carousel */
     .glider-contain {
       margin: 40px 0;
       padding: 0 20px;
-      position: relative;  /* Needed for arrow positioning */
+      position: relative;  /* For positioning the arrow buttons */
     }
     .glider {
       margin: auto;
@@ -93,21 +93,24 @@
       font-size: 0.9rem;
       color: #666;
     }
-
-    /* Arrow Buttons */
+    
+    /* Carousel Arrow Buttons */
     .glider-prev, .glider-next {
-      display: none; /* Hidden by default, will show on desktop via media query */
+      display: none;  /* Hidden on small screens */
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.1);  /* Faint background */
       border: none;
-      color: #fff;
-      padding: 10px;
-      border-radius: 50%;
+      color: #555;
+      padding: 15px 20px;
       cursor: pointer;
-      z-index: 2;
-      font-size: 1.5rem;
+      transition: background 0.3s, color 0.3s;
+      font-size: 2rem;
+    }
+    .glider-prev:hover, .glider-next:hover {
+      background: rgba(0, 0, 0, 0.3);  /* Darker on hover */
+      color: #222;
     }
     .glider-prev {
       left: 10px;
@@ -134,10 +137,9 @@
       color: #0073e6;
       text-decoration: none;
     }
-
+    
     /* Responsive Styles */
     @media (min-width: 768px) {
-      /* Increase padding on larger screens */
       nav {
         padding: 20px 40px;
       }
@@ -162,7 +164,7 @@
       .contact-section h2 {
         font-size: 2.5rem;
       }
-      /* Display arrow buttons on desktop */
+      /* Show arrows on desktop */
       .glider-prev, .glider-next {
         display: block;
       }
@@ -175,15 +177,15 @@
     <div style="font-weight: bold;">NewKingdom</div>
     <div>Shop | About | Contact</div>
   </nav>
-
-  <!-- Banner Section with Parallax Background -->
+  
+  <!-- Banner Section with Background Image -->
   <div class="banner" data-aos="fade-up">
     <h2>Experience the Game. Embrace Your Style.</h2>
   </div>
-
+  
   <!-- Product Carousel with Arrow Buttons -->
   <div class="glider-contain">
-    <button class="glider-prev">«</button>
+    <button class="glider-prev">&#8249;</button>
     <div class="glider">
       <div class="product-card" data-aos="fade-up">
         <img src="https://via.placeholder.com/300x300.png?text=Elite+Jersey" alt="Elite Match Jersey">
@@ -201,20 +203,20 @@
         <p>Train hard. Recover faster. Gear that moves with you.</p>
       </div>
     </div>
-    <button class="glider-next">»</button>
+    <button class="glider-next">&#8250;</button>
   </div>
-
+  
   <!-- Contact Section -->
   <div class="contact-section" data-aos="fade-up">
     <h2>Contact Us</h2>
     <p>Have questions? Email us at <a href="mailto:info@newkingdomsoccer.com">info@newkingdomsoccer.com</a>.</p>
   </div>
-
+  
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
-      once: true  // Ensures elements animate once and remain visible
+      once: true  // Ensures animations trigger only once
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
